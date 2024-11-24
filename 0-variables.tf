@@ -79,6 +79,8 @@ variable "subnets" {
   }
 }
 
+# Finish the rest of the subnets with the following information:
+# Create a VPC for all resources in the variable file, use a for_each loop to create the VPCs.
 
 #     - New York
 #       Region: us-east-1
