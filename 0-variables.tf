@@ -56,112 +56,145 @@ variable "subnets" {
       cidr = "10.40.11.0/24"
       az   = "ap-northeast-1a"
     }
-    tokyo-b-test = {
+    tokyo-d-private = {
       vpc  = "tokyo"
+      cidr = "10.40.14.0/24"
+      az   = "ap-northeast-1b"
+    }
+    tokyo-b-test-public = {
+      vpc  = "tokyo-test"
       cidr = "10.40.2.0/24"
       az   = "ap-northeast-1b"
     }
-    new-york-a = {
+
+    tokyo-b-test-private = {
+      vpc  = "tokyo-test"
+      cidr = "10.40.12.0/24"
+      az   = "ap-northeast-1b"
+    }
+
+    new-york-a-public = {
       vpc  = "new-york"
       cidr = "10.41.1.0/24"
       az   = "us-east-1a"
     }
-    new-york-b = {
+    new-york-b-public = {
       vpc  = "new-york"
       cidr = "10.41.2.0/24"
       az   = "us-east-1b"
     }
-    london     = {}
-    sao-paulo  = {}
-    australia  = {}
-    hong-kong  = {}
-    california = {}
+    new-york-a-private = {
+      vpc  = "new-york"
+      cidr = "10.41.11.0/24"
+      az   = "us-east-1a"
+    }
+    new-york-b-private = {
+      vpc  = "new-york"
+      cidr = "10.41.12.0/24"
+      az   = "us-east-1b"
+    }
+
+    london-a-public = {
+      vpc  = "london"
+      cidr = "10.42.1.0/24"
+      az   = "eu-west-2a"
+    }
+    london-b-public = {
+      vpc  = "london"
+      cidr = "10.42.2.0/24"
+      az   = "eu-west-2b"
+    }
+    london-a-private = {
+      vpc  = "london"
+      cidr = "10.42.11.0/24"
+      az   = "eu-west-2a"
+    }
+    london-b-private = {
+      vpc  = "london"
+      cidr = "10.42.12.0/24"
+      az   = "eu-west-2b"
+    }
+    sao-paulo-a-public = {
+      vpc  = "sao-paulo"
+      cidr = "10.43.1.0/24"
+      az   = "sa-east-1a"
+    }
+    sao-paulo-c-public = {
+      vpc  = "sao-paulo"
+      cidr = "10.43.3.0/24"
+      az   = "sa-east-1c"
+    }
+    sao-paulo-a-private = {
+      vpc  = "sao-paulo"
+      cidr = "10.43.11.0/24"
+      az   = "sa-east-1a"
+    }
+    sao-paulo-c-private = {
+      vpc  = "sao-paulo"
+      cidr = "10.43.13.0/24"
+      az   = "sa-east-1c"
+    }
+    australia-a-public = {
+      vpc  = "australia"
+      cidr = "10.44.1.0/24"
+      az   = "ap-southeast-2a"
+    }
+    australia-b-public = {
+      vpc  = "australia"
+      cidr = "10.44.2.0/24"
+      az   = "ap-southeast-2b"
+    }
+    australia-a-private = {
+      vpc  = "australia"
+      cidr = "10.44.11.0/24"
+      az   = "ap-southeast-2a"
+    }
+    australia-b-private = {
+      vpc  = "australia"
+      cidr = "10.44.12.0/24"
+      az   = "ap-southeast-2b"
+    }
+    hong-kong-a-public = {
+      vpc  = "hong-kong"
+      cidr = "10.45.1.0/24"
+      az   = "ap-east-1a"
+    }
+    hong-kong-b-public = {
+      vpc  = "hong-kong"
+      cidr = "10.45.2.0/24"
+      az   = "ap-east-1b"
+    }
+    hong-kong-a-private = {
+      vpc  = "hong-kong"
+      cidr = "10.45.11.0/24"
+      az   = "ap-east-1a"
+    }
+    hong-kong-b-private = {
+      vpc  = "hong-kong"
+      cidr = "10.45.12.0/24"
+      az   = "ap-east-1b"
+    }
+    california-a-public = {
+      vpc  = "california"
+      cidr = "10.46.1.0/24"
+      az   = "us-west-1a"
+    }
+    california-b-public = {
+      vpc  = "california"
+      cidr = "10.46.2.0/24"
+      az   = "us-west-1b"
+    }
+    california-a-private = {
+      vpc  = "california"
+      cidr = "10.46.11.0/24"
+      az   = "us-west-1a"
+    }
+    california-b-private = {
+      vpc  = "california"
+      cidr = "10.46.12.0/24"
+      az   = "us-west-1b"
+    }
   }
 }
 
-# Finish the rest of the subnets with the following information:
-# Create a VPC for all resources in the variable file, use a for_each loop to create the VPCs.
-
-#     - New York
-#       Region: us-east-1
-#       AZ: us-east-1a
-#           us-east-1b
-#       VPC: new-york
-#       CIDR: 10.41.0.0/16
-#       Subnet:
-#         Private: 
-#           new-york-a-private: 10.41.11.0/24
-#           new-york-b-private: 10.41.12.0/24
-#         Public:
-#           new-york-a-public: 10.41.1.0/24
-#           new-york-b-public: 10.41.2.0/24
-
-#     - London
-#       Region: eu-west-2
-#       AZ: eu-west-2a
-#           eu-west-2b
-#       VPC: london
-#       CIDR: 10.42.0.0/16
-#       Subnet:
-#         Private: 
-#           london-a-private: 10.42.11.0/24
-#           london-b-private: 10.42.12.0/24
-#         Public:
-#           london-a-public: 10.42.1.0/24
-#           london-b-public: 10.42.2.0/24
-
-#     - Sao Paulo
-#       Region: sa-east-1
-#       AZ: sa-east-1a
-#           sa-east-1c
-#       VPC: sao-paulo
-#       CIDR: 10.43.0.0/16
-#       Subnet:
-#         Private: 
-#           sao-paulo-a-private: 10.43.11.0/24
-#           sao-paulo-b-private: 10.43.12.0/24
-#         Public:
-#           sao-paulo-a-public: 10.43.1.0/24
-#           sao-paulo-b-public: 10.43.2.0/24
-
-#     - Australia 
-#       Region: ap-southeast-2
-#       AZ: ap-southeast-2a
-#           ap-southeast-2b
-#       VPC: australia
-#       CIDR: 10.44.0.0/16
-#       Subnet:
-#         Private: 
-#           australia-a-private: 10.44.11.0/24
-#           australia-b-private: 10.44.12.0/24
-#         Public:
-#           australia-a-public: 10.44.1.0/24
-#           australia-b-public: 10.44.2.0/24
-
-#     - Hong Kong
-#       Region: ap-east-1
-#       AZ: ap-east-1a
-#           ap-east-1b
-#       VPC: hong-kong
-#       CIDR: 10.45.0.0/16
-#       Subnet:
-#         Private: 
-#           hong-kong-a-private: 10.45.11.0/24
-#           hong-kong-b-private: 10.45.12.0/24
-#         Public:
-#           hong-kong-a-public: 10.45.1.0/24
-#           hong-kong-b-public: 10.45.2.0/24
-
-#     - California.
-#       Region: us-west-1
-#       AZ: us-west-1a
-#           us-west-1b
-#       VPC: california
-#       CIDR: 10.46.0.0/16
-#       Subnet:
-#         Private: 
-#           california-a-private: 10.46.11.0/24
-#           california-b-private: 10.46.12.0/24
-#         Public:
-#           california-a-public: 10.46.1.0/24
-#           california-b-public: 10.46.2.0/24
+#
