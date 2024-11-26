@@ -1,4 +1,15 @@
-
+variable "setup" {
+  type = map(string)
+  default = {
+    tokyo      = "ap-northeast-1"
+    new-york   = "us-east-1"
+    london     = "eu-west-2"
+    sao-paulo  = "sa-east-1"
+    australia  = "ap-southeast-2"
+    hong-kong  = "ap-east-1"
+    california = "us-west-1"
+  }
+}
 
 variable "vpcs" {
   type = map(map(string))
